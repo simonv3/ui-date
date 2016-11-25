@@ -138,13 +138,13 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
               });
 
               controller.$validators.uiDateValidator = function uiDateValidator(modelValue, viewValue) {
-                return angular.isDate(uiDateConverter.stringToDate(attrs.uiDateFormat, viewValue));
+                return (viewValue === null || 
+                        viewValue === '' || 
+                        angular.isDate(uiDateConverter.stringToDate(attrs.uiDateFormat, viewValue)));
               };
 
               controller.$parsers.push(function uiDateParser(valueToParse) {
-                return viewValue === null || 
-                       viewValue === '' || 
-                       uiDateConverter.stringToDate(attrs.uiDateFormat, valueToParse);
+                return uiDateConverter.stringToDate(attrs.uiDateFormat, valueToParse);
               });
 
               // Update the date picker when the model changes
