@@ -142,7 +142,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
               };
 
               controller.$parsers.push(function uiDateParser(valueToParse) {
-                return uiDateConverter.stringToDate(attrs.uiDateFormat, valueToParse);
+                return viewValue === null || 
+                       viewValue === '' || 
+                       uiDateConverter.stringToDate(attrs.uiDateFormat, valueToParse);
               });
 
               // Update the date picker when the model changes
