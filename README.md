@@ -1,3 +1,5 @@
+> **Note**: This is a branch that applies some validation changes withour doing the 1.0.0 refactor that ui-date went through which relied on es6 imports. Some projects just don't have that capacity yet. This is for them.
+
 # ui-date directive [![Build Status](https://travis-ci.org/angular-ui/ui-date.svg)](https://travis-ci.org/angular-ui/ui-date)
 
 This directive allows you to add a date-picker to your form elements.
